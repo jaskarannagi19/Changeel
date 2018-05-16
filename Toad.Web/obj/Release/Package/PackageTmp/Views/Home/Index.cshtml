@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+<script src="~/js/angular/AngularController.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.4/jquery.timeago.min.js"></script>
+<script>
+        $(document).ready(function () {
+            $("#postTime").timeago();
+        });
+</script>
+<div ng-controller="indexController">
+    <div>
+        <div class="section-warp ask-me">
+            <div class="container clearfix">
+                <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h1 class="mainHead" style="font-family:'Comic Sans MS'; color:white; ">Imagination is more important than knowledge</h1>
+                            <div class="clearfix"></div>
+                            <div class="center" style="margin:auto; max-width:19%">
+                                <div class="row">
+                                    <ul class="tabs">
+                                        <li class="tab"><a href="#" class="currentCustom" ng-click="GetBlog()">Changes</a></li>
+                                        <li class="tab"><a href="#" class="currentCustom">Change</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div><!-- End row -->
+            </div><!-- End box_icon -->
+        </div><!-- End container -->
+    </div><!-- End section-warp -->
+    <section class="main-content body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tabs-warp question-tab">
+                    <div class="tab-inner-warp">
+                        <div class="tab-inner">
+                            <article class="post clearfix" ng-repeat="b in BlogList">
+                                <div class="post-inner">
+                                    <div class="post-img"><a ng-href="~/Blog/Read/{{b.Id}}"><img ng-src="{{b.BaseImage}}" alt=""></a></div>
+                                    <h2 class="post-title"><span class="post-type"><i class="icon-picture"></i></span><a ng-href="~/Blog/Read/{{b.Id}}">{{b.Title}}</a></h2>
+                                    <div class="post-meta">
+
+                                    </div>
+                                    <div class="post-content">
+                                        <p>{{b.SmallDescription}}</p>
+                                        <a ng-href="~/Blog/Read/{{b.Id}}" class="post-read-more button color small">Continue reading</a>
+                                    </div><!-- End post-content -->
+                                </div><!-- End post-inner -->
+                            </article>
+
+                            <a ng-click="GetBlog()" href="#" class="load-questions"><i class="icon-refresh"></i>Load More</a>
+                        </div>
+                    </div>
+                    <div class="tab-inner-warp">
+                        <div class="tab-inner">
+                            <article class="question question-type-normal" ng-repeat="c in ChangesList">
+                                <h2>
+                                    <a ng-href="~/Change/Read/{{c.SearchTitle}}"><span id="questionTitle">{{c.Title}}</span></a>
+                                </h2>
+                                <div class="question-inner">
+                                    <div class="clearfix"></div>
+                                    <p class="question-desc" id="questionDetail">{{c.Details}}</p>
+
+
+                                    <span class="question-date"><time id="postTime" changeId="{{c.Id}}" class="timeago icon-time" datetime="{{c.DisplayDateTime}}">{{c.DisplayDateTime}}</time></span>
+                                    <span class="question-comment"><a href="#"><i class="icon-comment"></i>{{c.Proposals}} Proposals</a></span>
+                                    <span class="question-view"><i class="icon-user"></i>{{c.ViewCounter}} views</span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </article>
+                            <a href="#" class="load-questions"><i class="icon-refresh"></i>Load More</a>
+                        </div>
+
+                    </div>
+
+                </div><!-- End page-content -->
+            </div><!-- End main -->
+        </div><!-- End row -->
+    </section><!-- End container -->
+</div>
+<script>
+
+    //$("document").ready(function () {
+    //    $.ajax({
+    //        url: "/change/GetChanges",
+    //        type: "GET",
+    //        success: function (result) {
+    //            console.log(result);
+    //            for (var i = 0; i < result.length; i++) {
+
+    //            }
+    //        },
+    //        error: function (xhr, status) {
+
+    //        }
+    //    })
+
+    //})
+
+</script>

@@ -1,0 +1,57 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.precursorBorder{ }
+.precursorBorder>ul>li { border: none; }
+.border{border-right:2px solid blue}
+.borderRight {border-left:2px solid blue}
+.follow{ background-color:#3498db; float:right; color:white} 
+.currentCustom{background-color:#2f3239 !important}
+.loginname{
+  display: block;
+	position: relative;
+	float: left;
+	padding: 0 9px;
+	line-height: 36px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+    color:white;
+}
+.loginname:hover{
+    background-color:#3498db;
+    color:white;
+}
+.removeMargin{
+    margin-top:0px !important
+}
+.mainHead{
+    padding-left:0px;
+}
+@media screen and (max-width: 800px) {
+    .mainHead {
+        padding:0px;
+    }
+}
+

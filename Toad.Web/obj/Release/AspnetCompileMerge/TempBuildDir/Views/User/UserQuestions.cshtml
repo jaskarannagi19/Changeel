@@ -1,0 +1,108 @@
+﻿@model List<Toad.Data.ChangeTable>
+<section class="container main-content">
+    <div class="page-content page-content-user">
+        <div class="row">
+            
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="user-questions">
+                        
+
+    @foreach (var change in Model)
+    {
+        <article class="question user-question">
+
+            <h3>
+                <a href="single_question.html">@change.Title</a>
+            </h3>
+            
+            <div class="question-content">
+                <p>@change.Details</p>
+                <div class="question-bottom">
+                    <div class="question-answered"><i class="icon-ok"></i>category</div>
+                    <span class="question-favorite"><i class="icon-star"></i>5</span>
+                    <span class="question-category"><a href="#"><i class="icon-folder-close"></i>wordpress</a></span>
+                    <span class="question-date"><i class="icon-time"></i>@change.TimeStamp</span>
+                    <span class="question-comment"><a href="#"><i class="icon-comment"></i>5 Answers</a></span>
+                    <a class="question-reply" href="#"><i class="icon-reply"></i>Reply</a>
+                    <span class="question-view"><i class="icon-user"></i>70 views</span>
+                </div>
+            </div>
+        </article>
+    }
+
+
+                            
+                        
+                        @*<article class="question user-question">
+                            <h3>
+                                <a href="single_question_poll.html">This Is My Second Poll Question</a>
+                            </h3>
+                            <div class="question-type-main"><i class="icon-signal"></i>Poll</div>
+                            <div class="question-content">
+                                <div class="question-bottom">
+                                    <span class="question-favorite"><i class="icon-star-empty"></i>0</span>
+                                    <span class="question-category"><a href="#"><i class="icon-folder-close"></i>CSS</a></span>
+                                    <span class="question-date"><i class="icon-time"></i>15 secs ago</span>
+                                    <span class="question-comment"><a href="#"><i class="icon-comment"></i>5 Answers</a></span>
+                                    <a class="question-reply" href="#"><i class="icon-reply"></i>Reply</a>
+                                    <span class="question-view"><i class="icon-user"></i>70 views</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="question user-question">
+                            <h3>
+                                <a href="single_question.html">This is my third Question</a>
+                            </h3>
+                            <div class="question-type-main"><i class="icon-question-sign"></i>Question</div>
+                            <div class="question-content">
+                                <div class="question-bottom">
+                                    <div class="question-answered question-answered-done"><i class="icon-ok"></i>solved</div>
+                                    <span class="question-favorite"><i class="icon-star-empty"></i>0</span>
+                                    <span class="question-category"><a href="#"><i class="icon-folder-close"></i>HTML</a></span>
+                                    <span class="question-date"><i class="icon-time"></i>15 secs ago</span>
+                                    <span class="question-comment"><a href="#"><i class="icon-comment"></i>5 Answers</a></span>
+                                    <a class="question-reply" href="#"><i class="icon-reply"></i>Reply</a>
+                                    <span class="question-view"><i class="icon-user"></i>70 views</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="question user-question">
+                            <h3>
+                                <a href="single_question.html">This is my fourth Question</a>
+                            </h3>
+                            <div class="question-type-main"><i class="icon-question-sign"></i>Question</div>
+                            <div class="question-content">
+                                <div class="question-bottom">
+                                    <span class="question-favorite"><i class="icon-star-empty"></i>0</span>
+                                    <span class="question-category"><a href="#"><i class="icon-folder-close"></i>PHP</a></span>
+                                    <span class="question-date"><i class="icon-time"></i>15 secs ago</span>
+                                    <span class="question-comment"><a href="#"><i class="icon-comment"></i>5 Answers</a></span>
+                                    <a class="question-reply" href="#"><i class="icon-reply"></i>Reply</a>
+                                    <span class="question-view"><i class="icon-user"></i>70 views</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="question user-question">
+                            <h3>
+                                <a href="single_question.html">This is my fifth Question</a>
+                            </h3>
+                            <div class="question-type-main"><i class="icon-question-sign"></i>Question</div>
+                            <div class="question-content">
+                                <div class="question-bottom">
+                                    <div class="question-answered"><i class="icon-ok"></i>in progress</div>
+                                    <span class="question-favorite"><i class="icon-star-empty"></i>0</span>
+                                    <span class="question-category"><a href="#"><i class="icon-folder-close"></i>jQuery</a></span>
+                                    <span class="question-date"><i class="icon-time"></i>15 secs ago</span>
+                                    <span class="question-comment"><a href="#"><i class="icon-comment"></i>5 Answers</a></span>
+                                    <a class="question-reply" href="#"><i class="icon-reply"></i>Reply</a>
+                                    <span class="question-view"><i class="icon-user"></i>70 views</span>
+                                </div>
+                            </div>
+                        </article>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

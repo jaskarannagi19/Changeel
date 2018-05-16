@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77ec0cc248e04109a33c22a3c5cce351" Name="Diagram1" ZoomLevel="100" >
+        <EntityTypeShape EntityType="DatabaseModel.Change" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="DatabaseModel.Category" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DatabaseModel.Tags" Width="1.5" PointX="0.75" PointY="7.125" />
+        <EntityTypeShape EntityType="DatabaseModel.ChangeTag" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.ChangeCategory" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.UserChange" Width="1.5" PointX="3" PointY="6.875" />
+        <AssociationConnector Association="DatabaseModel.ChangeChangeTag" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.ChangeChangeCategory" />
+        <AssociationConnector Association="DatabaseModel.ChangeUserChange" />
+        <AssociationConnector Association="DatabaseModel.CategoryChangeCategory" />
+        <AssociationConnector Association="DatabaseModel.UserUserChange" />
+        <AssociationConnector Association="DatabaseModel.TagsChangeTag" />
+        <EntityTypeShape EntityType="DatabaseModel.Comment" Width="1.5" PointX="5.875" PointY="8.875" />
+        <AssociationConnector Association="DatabaseModel.ChangeComment" />
+        <EntityTypeShape EntityType="DatabaseModel.UserComment" Width="1.5" PointX="8" PointY="8" />
+        <AssociationConnector Association="DatabaseModel.UserUserComment" />
+        <AssociationConnector Association="DatabaseModel.CommentUserComment" />
+        <EntityTypeShape EntityType="DatabaseModel.Blog" Width="1.5" PointX="7.375" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.UserBlog" />
+        <EntityTypeShape EntityType="DatabaseModel.ProposalVote" Width="1.5" PointX="3.875" PointY="9.375" />
+        <AssociationConnector Association="DatabaseModel.CommentProposalVote" />
+        <AssociationConnector Association="DatabaseModel.UserProposalVote" />
+        <EntityTypeShape EntityType="DatabaseModel.ChangePrecursor" PointX="5.375" PointY="1.25" Width="1.5" />
+        <AssociationConnector Association="DatabaseModel.ChangeChangePrecursor" />
+        <AssociationConnector Association="DatabaseModel.UserChangePrecursor" />
+        <AssociationConnector Association="DatabaseModel.ChangeChangePrecursor1" />
+        <EntityTypeShape EntityType="DatabaseModel.Constraint" Width="1.5" PointX="9.5" PointY="2.625" />
+        <AssociationConnector Association="DatabaseModel.ChangeConstraint" />
+        <AssociationConnector Association="DatabaseModel.UserConstraint" />
+        <EntityTypeShape EntityType="DatabaseModel.ChangeFollower" Width="1.5" PointX="7.625" PointY="0.75" />
+        <AssociationConnector Association="DatabaseModel.ChangeChangeFollow" />
+        <AssociationConnector Association="DatabaseModel.UserChangeFollow" />
+        <EntityTypeShape EntityType="DatabaseModel.UserFollower" Width="1.5" PointX="13.5" PointY="3.125" />
+        <AssociationConnector Association="DatabaseModel.UserUserFollower" />
+        <AssociationConnector Association="DatabaseModel.UserUserFollower1" />
+        <EntityTypeShape EntityType="DatabaseModel.FreeComment" Width="1.5" PointX="11.5" PointY="1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

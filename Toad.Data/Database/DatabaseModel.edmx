@@ -1,0 +1,1274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="Changes" EntityType="DatabaseModel.Store.Changes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="DatabaseModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="DatabaseModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tags" EntityType="DatabaseModel.Store.Tags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangeTags" EntityType="DatabaseModel.Store.ChangeTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangeCategories" EntityType="DatabaseModel.Store.ChangeCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserChanges" EntityType="DatabaseModel.Store.UserChanges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="DatabaseModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserComments" EntityType="DatabaseModel.Store.UserComments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Blogs" EntityType="DatabaseModel.Store.Blogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProposalVotes" EntityType="DatabaseModel.Store.ProposalVotes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangePrecursors" EntityType="DatabaseModel.Store.ChangePrecursors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Constraints" EntityType="DatabaseModel.Store.Constraints" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangeFollowers" EntityType="DatabaseModel.Store.ChangeFollowers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserFollowers" EntityType="DatabaseModel.Store.UserFollowers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FreeComments" EntityType="DatabaseModel.Store.FreeComments" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ChangeChangeTag" Association="DatabaseModel.Store.ChangeChangeTag">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="ChangeTag" EntitySet="ChangeTags" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeChangeCategory" Association="DatabaseModel.Store.ChangeChangeCategory">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="ChangeCategory" EntitySet="ChangeCategories" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeUserChange" Association="DatabaseModel.Store.ChangeUserChange">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="UserChange" EntitySet="UserChanges" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryChangeCategory" Association="DatabaseModel.Store.CategoryChangeCategory">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="ChangeCategory" EntitySet="ChangeCategories" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserChange" Association="DatabaseModel.Store.UserUserChange">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserChange" EntitySet="UserChanges" />
+    </AssociationSet>
+    <AssociationSet Name="TagsChangeTag" Association="DatabaseModel.Store.TagsChangeTag">
+      <End Role="Tags" EntitySet="Tags" />
+      <End Role="ChangeTag" EntitySet="ChangeTags" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeComment" Association="DatabaseModel.Store.ChangeComment">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserComment" Association="DatabaseModel.Store.UserUserComment">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserComment" EntitySet="UserComments" />
+    </AssociationSet>
+    <AssociationSet Name="CommentUserComment" Association="DatabaseModel.Store.CommentUserComment">
+      <End Role="Comment" EntitySet="Comments" />
+      <End Role="UserComment" EntitySet="UserComments" />
+    </AssociationSet>
+    <AssociationSet Name="UserBlog" Association="DatabaseModel.Store.UserBlog">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Blog" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="CommentProposalVote" Association="DatabaseModel.Store.CommentProposalVote">
+      <End Role="Comment" EntitySet="Comments" />
+      <End Role="ProposalVote" EntitySet="ProposalVotes" />
+    </AssociationSet>
+    <AssociationSet Name="UserProposalVote" Association="DatabaseModel.Store.UserProposalVote">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProposalVote" EntitySet="ProposalVotes" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeChangePrecursor" Association="DatabaseModel.Store.ChangeChangePrecursor">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="ChangePrecursor" EntitySet="ChangePrecursors" />
+    </AssociationSet>
+    <AssociationSet Name="UserChangePrecursor" Association="DatabaseModel.Store.UserChangePrecursor">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ChangePrecursor" EntitySet="ChangePrecursors" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeChangePrecursor1" Association="DatabaseModel.Store.ChangeChangePrecursor1">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="ChangePrecursor" EntitySet="ChangePrecursors" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeConstraint" Association="DatabaseModel.Store.ChangeConstraint">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="Constraint" EntitySet="Constraints" />
+    </AssociationSet>
+    <AssociationSet Name="UserConstraint" Association="DatabaseModel.Store.UserConstraint">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Constraint" EntitySet="Constraints" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeChangeFollow" Association="DatabaseModel.Store.ChangeChangeFollow">
+      <End Role="Change" EntitySet="Changes" />
+      <End Role="ChangeFollow" EntitySet="ChangeFollowers" />
+    </AssociationSet>
+    <AssociationSet Name="UserChangeFollow" Association="DatabaseModel.Store.UserChangeFollow">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ChangeFollow" EntitySet="ChangeFollowers" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserFollower" Association="DatabaseModel.Store.UserUserFollower">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserFollower" EntitySet="UserFollowers" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserFollower1" Association="DatabaseModel.Store.UserUserFollower1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserFollower" EntitySet="UserFollowers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Changes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsPoll" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="SearchTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ViewCounter" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AspNetUserId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="TagLine" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LongDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangeTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="false" />
+    <Property Name="TagsId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangeCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserChanges">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="IPAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="false" />
+    <Property Name="TotalVote" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserComments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CommentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BaseImage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="SmallDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProposalVotes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommentId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="VoteStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangePrecursors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="MainChangeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Constraints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangeFollowers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserFollowers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="MainUserId" Type="int" Nullable="false" />
+    <Property Name="FollowingUserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FreeComments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="ChangeId" Type="int" Nullable="true" />
+    <Property Name="BlogId" Type="int" Nullable="true" />
+    <Property Name="IP" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ChangeChangeTag">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="ChangeTag" Type="DatabaseModel.Store.ChangeTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeTag">
+        <PropertyRef Name="ChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeChangeCategory">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="ChangeCategory" Type="DatabaseModel.Store.ChangeCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeCategory">
+        <PropertyRef Name="ChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeUserChange">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="UserChange" Type="DatabaseModel.Store.UserChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserChange">
+        <PropertyRef Name="ChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryChangeCategory">
+    <End Role="Category" Type="DatabaseModel.Store.Categories" Multiplicity="1" />
+    <End Role="ChangeCategory" Type="DatabaseModel.Store.ChangeCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserChange">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="UserChange" Type="DatabaseModel.Store.UserChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserChange">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TagsChangeTag">
+    <End Role="Tags" Type="DatabaseModel.Store.Tags" Multiplicity="1" />
+    <End Role="ChangeTag" Type="DatabaseModel.Store.ChangeTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeTag">
+        <PropertyRef Name="TagsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeComment">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="Comment" Type="DatabaseModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserComment">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="UserComment" Type="DatabaseModel.Store.UserComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserComment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CommentUserComment">
+    <End Role="Comment" Type="DatabaseModel.Store.Comments" Multiplicity="1" />
+    <End Role="UserComment" Type="DatabaseModel.Store.UserComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserComment">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserBlog">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="Blog" Type="DatabaseModel.Store.Blogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CommentProposalVote">
+    <End Role="Comment" Type="DatabaseModel.Store.Comments" Multiplicity="1" />
+    <End Role="ProposalVote" Type="DatabaseModel.Store.ProposalVotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProposalVote">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserProposalVote">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="ProposalVote" Type="DatabaseModel.Store.ProposalVotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProposalVote">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeChangePrecursor">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="ChangePrecursor" Type="DatabaseModel.Store.ChangePrecursors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangePrecursor">
+        <PropertyRef Name="ChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChangePrecursor">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="ChangePrecursor" Type="DatabaseModel.Store.ChangePrecursors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangePrecursor">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeChangePrecursor1">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="ChangePrecursor" Type="DatabaseModel.Store.ChangePrecursors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangePrecursor">
+        <PropertyRef Name="MainChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeConstraint">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="Constraint" Type="DatabaseModel.Store.Constraints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Constraint">
+        <PropertyRef Name="ChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserConstraint">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="Constraint" Type="DatabaseModel.Store.Constraints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Constraint">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeChangeFollow">
+    <End Role="Change" Type="DatabaseModel.Store.Changes" Multiplicity="1" />
+    <End Role="ChangeFollow" Type="DatabaseModel.Store.ChangeFollowers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Change">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeFollow">
+        <PropertyRef Name="ChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChangeFollow">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="ChangeFollow" Type="DatabaseModel.Store.ChangeFollowers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeFollow">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserFollower">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="UserFollower" Type="DatabaseModel.Store.UserFollowers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserFollower">
+        <PropertyRef Name="MainUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserFollower1">
+    <End Role="User" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="UserFollower" Type="DatabaseModel.Store.UserFollowers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserFollower">
+        <PropertyRef Name="FollowingUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DatabaseModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Changes" EntityType="DatabaseModel.Change" />
+          <EntitySet Name="Categories" EntityType="DatabaseModel.Category" />
+          <EntitySet Name="Users" EntityType="DatabaseModel.User" />
+          <EntitySet Name="Tags" EntityType="DatabaseModel.Tags" />
+          <EntitySet Name="ChangeTags" EntityType="DatabaseModel.ChangeTag" />
+          <EntitySet Name="ChangeCategories" EntityType="DatabaseModel.ChangeCategory" />
+          <EntitySet Name="UserChanges" EntityType="DatabaseModel.UserChange" />
+          <AssociationSet Name="ChangeChangeTag" Association="DatabaseModel.ChangeChangeTag">
+            <End Role="Change" EntitySet="Changes" />
+            <End Role="ChangeTag" EntitySet="ChangeTags" />
+          </AssociationSet>
+          <AssociationSet Name="ChangeChangeCategory" Association="DatabaseModel.ChangeChangeCategory">
+            <End Role="Change" EntitySet="Changes" />
+            <End Role="ChangeCategory" EntitySet="ChangeCategories" />
+          </AssociationSet>
+          <AssociationSet Name="ChangeUserChange" Association="DatabaseModel.ChangeUserChange">
+            <End Role="Change" EntitySet="Changes" />
+            <End Role="UserChange" EntitySet="UserChanges" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryChangeCategory" Association="DatabaseModel.CategoryChangeCategory">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="ChangeCategory" EntitySet="ChangeCategories" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserChange" Association="DatabaseModel.UserUserChange">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserChange" EntitySet="UserChanges" />
+          </AssociationSet>
+          <AssociationSet Name="TagsChangeTag" Association="DatabaseModel.TagsChangeTag">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="ChangeTag" EntitySet="ChangeTags" />
+          </AssociationSet>
+          <EntitySet Name="Comments" EntityType="DatabaseModel.Comment" />
+          <AssociationSet Name="ChangeComment" Association="DatabaseModel.ChangeComment">
+            <End Role="Change" EntitySet="Changes" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <EntitySet Name="UserComments" EntityType="DatabaseModel.UserComment" />
+          <AssociationSet Name="UserUserComment" Association="DatabaseModel.UserUserComment">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserComment" EntitySet="UserComments" />
+          </AssociationSet>
+          <AssociationSet Name="CommentUserComment" Association="DatabaseModel.CommentUserComment">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="UserComment" EntitySet="UserComments" />
+          </AssociationSet>
+          <EntitySet Name="Blogs" EntityType="DatabaseModel.Blog" />
+          <AssociationSet Name="UserBlog" Association="DatabaseModel.UserBlog">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Blog" EntitySet="Blogs" />
+          </AssociationSet>
+          <EntitySet Name="ProposalVotes" EntityType="DatabaseModel.ProposalVote" />
+          <AssociationSet Name="CommentProposalVote" Association="DatabaseModel.CommentProposalVote">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="ProposalVote" EntitySet="ProposalVotes" />
+          </AssociationSet>
+          <AssociationSet Name="UserProposalVote" Association="DatabaseModel.UserProposalVote">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ProposalVote" EntitySet="ProposalVotes" />
+          </AssociationSet>
+          <EntitySet Name="ChangePrecursors" EntityType="DatabaseModel.ChangePrecursor" />
+          <AssociationSet Name="ChangeChangePrecursor" Association="DatabaseModel.ChangeChangePrecursor">
+            <End EntitySet="Changes" Role="Change" />
+            <End EntitySet="ChangePrecursors" Role="ChangePrecursor" />
+          </AssociationSet>
+          <AssociationSet Name="UserChangePrecursor" Association="DatabaseModel.UserChangePrecursor">
+            <End EntitySet="Users" Role="User" />
+            <End EntitySet="ChangePrecursors" Role="ChangePrecursor" />
+          </AssociationSet>
+          <AssociationSet Name="ChangeChangePrecursor1" Association="DatabaseModel.ChangeChangePrecursor1">
+            <End Role="Change" EntitySet="Changes" />
+            <End Role="ChangePrecursor" EntitySet="ChangePrecursors" />
+          </AssociationSet>
+          <EntitySet Name="Constraints" EntityType="DatabaseModel.Constraint" />
+          <AssociationSet Name="ChangeConstraint" Association="DatabaseModel.ChangeConstraint">
+            <End Role="Change" EntitySet="Changes" />
+            <End Role="Constraint" EntitySet="Constraints" />
+          </AssociationSet>
+          <AssociationSet Name="UserConstraint" Association="DatabaseModel.UserConstraint">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Constraint" EntitySet="Constraints" />
+          </AssociationSet>
+          <EntitySet Name="ChangeFollowers" EntityType="DatabaseModel.ChangeFollower" />
+          <AssociationSet Name="ChangeChangeFollow" Association="DatabaseModel.ChangeChangeFollow">
+            <End Role="Change" EntitySet="Changes" />
+            <End Role="ChangeFollow" EntitySet="ChangeFollowers" />
+          </AssociationSet>
+          <AssociationSet Name="UserChangeFollow" Association="DatabaseModel.UserChangeFollow">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ChangeFollow" EntitySet="ChangeFollowers" />
+          </AssociationSet>
+          <EntitySet Name="UserFollowers" EntityType="DatabaseModel.UserFollower" />
+          <AssociationSet Name="UserUserFollower" Association="DatabaseModel.UserUserFollower">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserFollower" EntitySet="UserFollowers" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserFollower1" Association="DatabaseModel.UserUserFollower1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserFollower" EntitySet="UserFollowers" />
+          </AssociationSet>
+          <EntitySet Name="FreeComments" EntityType="DatabaseModel.FreeComment" />
+          </EntityContainer>
+        <EntityType Name="Change">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Details" Type="String" Nullable="false" />
+          <Property Name="IsPoll" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ChangeTags" Relationship="DatabaseModel.ChangeChangeTag" FromRole="Change" ToRole="ChangeTag" />
+          <NavigationProperty Name="ChangeCategories" Relationship="DatabaseModel.ChangeChangeCategory" FromRole="Change" ToRole="ChangeCategory" />
+          <NavigationProperty Name="UserChanges" Relationship="DatabaseModel.ChangeUserChange" FromRole="Change" ToRole="UserChange" />
+          <Property Name="SearchTitle" Type="String" Nullable="false" />
+          <NavigationProperty Name="Comments" Relationship="DatabaseModel.ChangeComment" FromRole="Change" ToRole="Comment" />
+          <Property Name="ViewCounter" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ChangePrecursors" Relationship="DatabaseModel.ChangeChangePrecursor" FromRole="Change" ToRole="ChangePrecursor" />
+          <NavigationProperty Name="MainChange" Relationship="DatabaseModel.ChangeChangePrecursor1" FromRole="Change" ToRole="ChangePrecursor" />
+          <NavigationProperty Name="Constraints" Relationship="DatabaseModel.ChangeConstraint" FromRole="Change" ToRole="Constraint" />
+          <NavigationProperty Name="ChangeFollows" Relationship="DatabaseModel.ChangeChangeFollow" FromRole="Change" ToRole="ChangeFollow" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <NavigationProperty Name="ChangeCategories" Relationship="DatabaseModel.CategoryChangeCategory" FromRole="Category" ToRole="ChangeCategory" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="AspNetUserId" Type="String" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="UserChanges" Relationship="DatabaseModel.UserUserChange" FromRole="User" ToRole="UserChange" />
+          <Property Name="TagLine" Type="String" Nullable="false" />
+          <Property Name="ShortDescription" Type="String" Nullable="false" />
+          <Property Name="LongDescription" Type="String" Nullable="false" />
+          <NavigationProperty Name="UserComments" Relationship="DatabaseModel.UserUserComment" FromRole="User" ToRole="UserComment" />
+          <NavigationProperty Name="Blogs" Relationship="DatabaseModel.UserBlog" FromRole="User" ToRole="Blog" />
+          <NavigationProperty Name="ProposalVotes" Relationship="DatabaseModel.UserProposalVote" FromRole="User" ToRole="ProposalVote" />
+          <NavigationProperty Name="ChangePrecursors" Relationship="DatabaseModel.UserChangePrecursor" FromRole="User" ToRole="ChangePrecursor" />
+          <NavigationProperty Name="Constraints" Relationship="DatabaseModel.UserConstraint" FromRole="User" ToRole="Constraint" />
+          <NavigationProperty Name="ChangeFollows" Relationship="DatabaseModel.UserChangeFollow" FromRole="User" ToRole="ChangeFollow" />
+          <NavigationProperty Name="UserFollowers" Relationship="DatabaseModel.UserUserFollower" FromRole="User" ToRole="UserFollower" />
+          <NavigationProperty Name="FollowingUser" Relationship="DatabaseModel.UserUserFollower1" FromRole="User" ToRole="UserFollower" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <NavigationProperty Name="ChangeTags" Relationship="DatabaseModel.TagsChangeTag" FromRole="Tags" ToRole="ChangeTag" />
+        </EntityType>
+        <EntityType Name="ChangeTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChangeId" Type="Int32" Nullable="false" />
+          <Property Name="TagsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Change" Relationship="DatabaseModel.ChangeChangeTag" FromRole="ChangeTag" ToRole="Change" />
+          <NavigationProperty Name="Tag" Relationship="DatabaseModel.TagsChangeTag" FromRole="ChangeTag" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="ChangeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChangeId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Change" Relationship="DatabaseModel.ChangeChangeCategory" FromRole="ChangeCategory" ToRole="Change" />
+          <NavigationProperty Name="Category" Relationship="DatabaseModel.CategoryChangeCategory" FromRole="ChangeCategory" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="UserChange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ChangeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Change" Relationship="DatabaseModel.ChangeUserChange" FromRole="UserChange" ToRole="Change" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserUserChange" FromRole="UserChange" ToRole="User" />
+        </EntityType>
+        <Association Name="ChangeChangeTag">
+          <End Type="DatabaseModel.Change" Role="Change" Multiplicity="1" />
+          <End Type="DatabaseModel.ChangeTag" Role="ChangeTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangeTag">
+              <PropertyRef Name="ChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ChangeChangeCategory">
+          <End Type="DatabaseModel.Change" Role="Change" Multiplicity="1" />
+          <End Type="DatabaseModel.ChangeCategory" Role="ChangeCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangeCategory">
+              <PropertyRef Name="ChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ChangeUserChange">
+          <End Type="DatabaseModel.Change" Role="Change" Multiplicity="1" />
+          <End Type="DatabaseModel.UserChange" Role="UserChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserChange">
+              <PropertyRef Name="ChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoryChangeCategory">
+          <End Type="DatabaseModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="DatabaseModel.ChangeCategory" Role="ChangeCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangeCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserChange">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.UserChange" Role="UserChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserChange">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TagsChangeTag">
+          <End Type="DatabaseModel.Tags" Role="Tags" Multiplicity="1" />
+          <End Type="DatabaseModel.ChangeTag" Role="ChangeTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangeTag">
+              <PropertyRef Name="TagsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+          <Property Name="IPAddress" Type="String" Nullable="false" />
+          <NavigationProperty Name="Change" Relationship="DatabaseModel.ChangeComment" FromRole="Comment" ToRole="Change" />
+          <Property Name="ChangeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserComments" Relationship="DatabaseModel.CommentUserComment" FromRole="Comment" ToRole="UserComment" />
+          <NavigationProperty Name="ProposalVotes" Relationship="DatabaseModel.CommentProposalVote" FromRole="Comment" ToRole="ProposalVote" />
+          <Property Name="TotalVote" Type="Int32" Nullable="false" />
+          </EntityType>
+        <Association Name="ChangeComment">
+          <End Type="DatabaseModel.Change" Role="Change" Multiplicity="1" />
+          <End Type="DatabaseModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserUserComment" FromRole="UserComment" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Comment" Relationship="DatabaseModel.CommentUserComment" FromRole="UserComment" ToRole="Comment" />
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UserUserComment">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.UserComment" Role="UserComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserComment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CommentUserComment">
+          <End Type="DatabaseModel.Comment" Role="Comment" Multiplicity="1" />
+          <End Type="DatabaseModel.UserComment" Role="UserComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserComment">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="BaseImage" Type="String" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserBlog" FromRole="Blog" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="SmallDescription" Type="String" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="UserBlog">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.Blog" Role="Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ProposalVote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Comment" Relationship="DatabaseModel.CommentProposalVote" FromRole="ProposalVote" ToRole="Comment" />
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserProposalVote" FromRole="ProposalVote" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="VoteStatus" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="CommentProposalVote">
+          <End Type="DatabaseModel.Comment" Role="Comment" Multiplicity="1" />
+          <End Type="DatabaseModel.ProposalVote" Role="ProposalVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProposalVote">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserProposalVote">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.ProposalVote" Role="ProposalVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProposalVote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ChangePrecursor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserChangePrecursor" FromRole="ChangePrecursor" ToRole="User" />
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="ChangeId" Nullable="false" Type="Int32" />
+          <Property Name="TimeStamp" Nullable="false" Type="DateTime" />
+          <NavigationProperty Name="Change" Relationship="DatabaseModel.ChangeChangePrecursor" FromRole="ChangePrecursor" ToRole="Change" />
+          <Property Name="UserId" Nullable="false" Type="Int32" />
+          <NavigationProperty Name="MainChange" Relationship="DatabaseModel.ChangeChangePrecursor1" FromRole="ChangePrecursor" ToRole="Change" />
+          <Property Name="MainChangeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ChangeChangePrecursor">
+          <End Type="DatabaseModel.Change" Multiplicity="1" Role="Change" />
+          <End Type="DatabaseModel.ChangePrecursor" Multiplicity="*" Role="ChangePrecursor" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangePrecursor">
+              <PropertyRef Name="ChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserChangePrecursor">
+          <End Type="DatabaseModel.User" Multiplicity="1" Role="User" />
+          <End Type="DatabaseModel.ChangePrecursor" Multiplicity="*" Role="ChangePrecursor" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangePrecursor">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ChangeChangePrecursor1">
+          <End Type="DatabaseModel.Change" Role="Change" Multiplicity="1" />
+          <End Type="DatabaseModel.ChangePrecursor" Role="ChangePrecursor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangePrecursor">
+              <PropertyRef Name="MainChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Constraint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Change" Relationship="DatabaseModel.ChangeConstraint" FromRole="Constraint" ToRole="Change" />
+          <Property Name="ChangeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserConstraint" FromRole="Constraint" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ChangeConstraint">
+          <End Type="DatabaseModel.Change" Role="Change" Multiplicity="1" />
+          <End Type="DatabaseModel.Constraint" Role="Constraint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Constraint">
+              <PropertyRef Name="ChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserConstraint">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.Constraint" Role="Constraint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Constraint">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ChangeFollower">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Change" Relationship="DatabaseModel.ChangeChangeFollow" FromRole="ChangeFollow" ToRole="Change" />
+          <Property Name="ChangeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserChangeFollow" FromRole="ChangeFollow" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="ChangeChangeFollow">
+          <End Type="DatabaseModel.Change" Role="Change" Multiplicity="1" />
+          <End Type="DatabaseModel.ChangeFollower" Role="ChangeFollow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Change">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangeFollow">
+              <PropertyRef Name="ChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserChangeFollow">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.ChangeFollower" Role="ChangeFollow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChangeFollow">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserFollower">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.UserUserFollower" FromRole="UserFollower" ToRole="User" />
+          <Property Name="MainUserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FollowingUser" Relationship="DatabaseModel.UserUserFollower1" FromRole="UserFollower" ToRole="User" />
+          <Property Name="FollowingUserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UserUserFollower">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.UserFollower" Role="UserFollower" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFollower">
+              <PropertyRef Name="MainUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserFollower1">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.UserFollower" Role="UserFollower" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFollower">
+              <PropertyRef Name="FollowingUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FreeComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ChangeId" Type="Int32" Nullable="true" />
+          <Property Name="BlogId" Type="Int32" Nullable="true" />
+          <Property Name="IP" Type="String" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseModelContainer">
+    <EntitySetMapping Name="Changes">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Change)">
+        <MappingFragment StoreEntitySet="Changes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="IsPoll" ColumnName="IsPoll" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="SearchTitle" ColumnName="SearchTitle" />
+          <ScalarProperty Name="ViewCounter" ColumnName="ViewCounter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Category)">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="TagLine" ColumnName="TagLine" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="LongDescription" ColumnName="LongDescription" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Tags)">
+        <MappingFragment StoreEntitySet="Tags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeTags">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.ChangeTag)">
+        <MappingFragment StoreEntitySet="ChangeTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+          <ScalarProperty Name="TagsId" ColumnName="TagsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.ChangeCategory)">
+        <MappingFragment StoreEntitySet="ChangeCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserChanges">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.UserChange)">
+        <MappingFragment StoreEntitySet="UserChanges">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Comment)">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+          <ScalarProperty Name="TotalVote" ColumnName="TotalVote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserComments">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.UserComment)">
+        <MappingFragment StoreEntitySet="UserComments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Blog)">
+        <MappingFragment StoreEntitySet="Blogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="BaseImage" ColumnName="BaseImage" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SmallDescription" ColumnName="SmallDescription" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProposalVotes">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.ProposalVote)">
+        <MappingFragment StoreEntitySet="ProposalVotes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="VoteStatus" ColumnName="VoteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangePrecursors">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.ChangePrecursor)">
+        <MappingFragment StoreEntitySet="ChangePrecursors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MainChangeId" ColumnName="MainChangeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Constraints">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Constraint)">
+        <MappingFragment StoreEntitySet="Constraints">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeFollowers">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.ChangeFollower)">
+        <MappingFragment StoreEntitySet="ChangeFollowers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserFollowers">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.UserFollower)">
+        <MappingFragment StoreEntitySet="UserFollowers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="MainUserId" ColumnName="MainUserId" />
+          <ScalarProperty Name="FollowingUserId" ColumnName="FollowingUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FreeComments">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.FreeComment)">
+        <MappingFragment StoreEntitySet="FreeComments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="ChangeId" ColumnName="ChangeId" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

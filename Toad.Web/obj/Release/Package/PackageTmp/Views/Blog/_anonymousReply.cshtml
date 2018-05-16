@@ -1,0 +1,40 @@
+﻿<div id="respond" class="comment-respond page-content clearfix">
+    <div class="boxedtitle page-title"><h2>Leave a Reply</h2></div>
+    <form action="" method="post" id="commentForm" class="comment-form">
+        <input type="hidden" name="blogId" value="@ViewData["id"]" />
+        <div id="respond-textarea">
+            <p>
+                <label class="required" for="longDescription">Name<span>*</span></label>
+                <input type="text" name="name" />
+                <label class="required" for="longDescription">Email<span>*</span></label>
+                <input type="text" name="email" />
+                <label class="required" for="longDescription">Details<span>*</span></label>
+                <textarea id="Content" name="Content" aria-required="true" cols="58" rows="8"></textarea>
+            </p>
+        </div>
+        <p class="form-submit">
+            <input name="submit" type="submit" id="bttnComment" value="Post Proposal" class="button small color">
+        </p>
+    </form>
+</div>
+<script>
+    $('#bttnComment').click(function () {
+        var data = $('#commentForm').serialize();
+        debugger;
+        $.ajax({
+            url: "/Blog/FreeComment",
+            method: 'POST',
+            data: data,
+            success: function (result) {
+                debugger;
+                console.log(result);
+            },
+            error: function (xhr, status) {
+
+            }
+        })
+    });
+
+
+
+</script>
